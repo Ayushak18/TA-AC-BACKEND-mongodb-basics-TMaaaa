@@ -2,7 +2,7 @@ writeCode
 
 Run these shell commands in mongo shell:
 
-- db.version()
+- db.version() 4.4.5
 - db.stats()
 - db.help()
 
