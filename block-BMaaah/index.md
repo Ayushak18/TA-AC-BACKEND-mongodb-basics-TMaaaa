@@ -70,6 +70,7 @@ db.articles.insertMany([
    <!-- db.articles.find({title:"Article Two"}) -->
 
 7. 2. Find documents using author's name field.
+      <!-- db.articles.find({'author.name':"Ayush Kamboj"}) -->
 
 8. Find document using a specific tag.
 <!-- db.articles.find({createdAt:ISODate("2021-05-06T18:17:51.347Z")}) -->
@@ -79,8 +80,13 @@ db.articles.insertMany([
 <!-- db.articles.update({'_id':ObjectId("609432cfbee1eead63d85fb7")},{$set:{title:"Article Update"}}) -->
 
 10. Update a author's name using article's title.
+<!-- db.articles.update({title:"Article One"},{$set:{'author.name':"Ayush Kamboj 2.0"}}) -->
+
 11. rename details field to description from all articles in articles collection.
+<!-- db.articles.updateMany({},{$rename:{details:"descriptions"}}) -->
+
 12. Add additional tag in a specific document.
+<!-- db.articles.update({"title" : "Article Two"},{$push:{'tags':"MongoDb"}}) -->
 
 13. Update an article's title using $set and without $set.
 
@@ -91,6 +97,7 @@ db.articles.insertMany([
 <!-- With set it just update the data but without set it will overright the whole data and delete the additional data -->
 
 13. find an article using title and increment it's auhtor's age by 5.
+<!-- db.articles.update({"_id" : ObjectId("609432cfbee1eead63d85fb5")},{$inc:{author:5}}) -->
 
 14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
 
