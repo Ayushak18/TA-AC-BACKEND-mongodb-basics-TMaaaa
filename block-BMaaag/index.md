@@ -9,3 +9,5 @@ Write code to:-
 - insert multiple document using insertMany command
 - find all documents from mountains
 - find a single document using name
+
+<!-- Completed -->
